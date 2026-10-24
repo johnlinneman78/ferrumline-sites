@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="A weekly report for commercial insurance producers: businesses that just filed a public record and now must buy insurance. Trucking authority filings nationwide, plus permit, liquor, health, and new-business records built territory by territory." />
+  <meta property="og:title" content="FerrumLine for Producers | Filings That Mean Insurance" />
+  <meta property="og:description" content="Weekly reports of businesses that just filed a public record and now must buy insurance. Built for commercial insurance producers." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232326'/%3E%3Crect x='14' y='10' width='36' height='9' fill='%23FF5F15'/%3E%3Crect x='14' y='10' width='9' height='44' fill='%23FF5F15'/%3E%3Crect x='14' y='28' width='25' height='9' fill='%23FF5F15'/%3E%3Crect x='14' y='45' width='36' height='9' fill='%238A8F98'/%3E%3C/svg%3E" />
+  <title>FerrumLine for Producers | Filings That Mean Insurance</title>
+  <style>
+:root {
+  --graphite: #232326;
+  --paper: #FAF7F1;
+  --hivis: #FF5F15;
+  --steel: #8A8F98;
+  --steel-dark: #5A5E64;
+  --line: #D8D2C6;
+  --line-dark: #3A3A3F;
+  --display: "Anton", "Archivo", sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--graphite);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+svg { display: block; }
+.wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+.skip-link {
+  position: absolute; left: 12px; top: -70px; z-index: 60;
+  padding: 10px 14px; background: var(--paper); color: var(--graphite);
+  border: 2px solid var(--graphite); font-weight: 700;
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--hivis); outline-offset: 2px; }
+
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+  text-wrap: balance;
+  margin: 0;
+}
+p { text-wrap: pretty; }
+
+/* Header */
+.site-head { background: var(--graphite); color: var(--paper); }
+.head-in {
+  min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.lockup { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.lockup .word { font-family: var(--display); font-size: 24px; letter-spacing: 0.04em; color: var(--paper); }
+.lockup .for { font-size: 13px; font-weight: 700; color: var(--steel); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
+.head-right { display: flex; align-items: center; gap: 22px; }
+.head-phone { color: var(--paper); font-weight: 600; text-decoration: none; font-size: 15px; }
+.head-phone:hover { text-decoration: underline; text-underline-offset: 4px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 12px 22px;
+  background: var(--hivis); color: var(--graphite);
+  font-family: var(--body); font-size: 16px; font-weight: 800;
+  border: 0; border-radius: 10px; cursor: pointer; text-decoration: none;
+  transition: transform 180ms ease-out, background-color 180ms ease-out;
+}
+.btn:hover { transform: scale(1.03); }
+.btn:active { transform: scale(0.97); transition-duration: 70ms; }
+.btn.small { min-height: 44px; padding: 9px 16px; font-size: 15px; }
+
+/* Hero */
+.hero { padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: clamp(34px, 6.2vw, 58px); max-width: 16ch; }
+.hero .sub { margin-top: 26px; max-width: 62ch; font-size: 19px; }
+.hero .sub p { margin: 0 0 12px; }
+.hero .facts { margin-top: 20px; font-weight: 600; }
+.hero .cta-row { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.hero .plain-link { font-weight: 700; text-underline-offset: 4px; }
+
+/* Sections */
+section { padding: 64px 0; }
+section h2 { font-size: clamp(28px, 4.6vw, 42px); margin-bottom: 22px; }
+.dark { background: var(--graphite); color: var(--paper); }
+.dark .muted { color: var(--steel); }
+.lede { max-width: 64ch; }
+.lede p { margin: 0 0 12px; }
+.fact-list { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--line-dark); }
+.fact-list li {
+  padding: 14px 0; border-bottom: 1px solid var(--line-dark);
+  font-size: 18px; max-width: 68ch;
+}
+.fact-list .n { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--paper); }
+.note-block { margin-top: 34px; max-width: 64ch; }
+.note-block .lead-in { font-weight: 800; font-size: 19px; margin: 0 0 10px; }
+.note-block p { margin: 0 0 10px; color: var(--paper); }
+.snapshot { margin-top: 30px; max-width: 64ch; color: var(--steel); font-size: 15.5px; }
+
+/* Row fields + sample */
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 34px; max-width: 760px; margin-top: 8px; }
+.fields div { padding: 9px 0; border-bottom: 1px solid var(--line-dark); }
+.fields dt { font-weight: 800; }
+.fields dd { margin: 2px 0 0; color: var(--steel); font-size: 15.5px; }
+.sample-cap { margin-top: 38px; font-size: 15.5px; color: var(--steel); max-width: 64ch; }
+.table-scroll { overflow-x: auto; margin-top: 12px; border: 1px solid var(--line-dark); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+th, td { text-align: left; padding: 11px 14px; vertical-align: top; }
+thead th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); border-bottom: 1px solid var(--line-dark); }
+tbody tr + tr td { border-top: 1px solid var(--line-dark); }
+td .addr { color: var(--steel); display: block; font-size: 14px; }
+
+/* Other windows */
+.windows { display: grid; gap: 0; max-width: 760px; }
+.window { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.window:first-child { padding-top: 6px; }
+.window h3 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+.window p { margin: 0 0 8px; max-width: 64ch; }
+.coverage-line { margin-top: 26px; font-weight: 700; max-width: 64ch; }
+
+/* Steps */
+.steps { list-style: none; counter-reset: step; margin: 8px 0 0; padding: 0; max-width: 760px; }
+.steps li {
+  counter-increment: step; position: relative;
+  padding: 16px 0 16px 58px; border-bottom: 1px solid var(--line);
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 12px;
+  font-family: var(--display); font-size: 28px; color: var(--hivis);
+}
+.steps p { margin: 0; max-width: 62ch; }
+.steps .step-head { font-weight: 800; }
+.method-note { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); max-width: 64ch; color: var(--steel-dark); font-size: 15.5px; line-height: 1.6; }
+
+/* Pricing */
+.price-big { font-family: var(--display); font-size: clamp(44px, 8vw, 76px); line-height: 1; margin: 6px 0 4px; }
+.price-per { color: var(--steel); font-weight: 600; margin: 0 0 24px; }
+.price-lines { list-style: none; margin: 0; padding: 0; max-width: 640px; }
+.price-lines li { padding: 11px 0; border-bottom: 1px solid var(--line-dark); font-size: 17.5px; }
+.price-lines li:first-child { border-top: 1px solid var(--line-dark); }
+
+/* Form */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 26px; max-width: 820px; margin-top: 10px; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field.wide { grid-column: 1 / -1; }
+.field label, .field legend { font-weight: 700; font-size: 15.5px; }
+.field input[type="text"], .field input[type="email"], .field textarea {
+  font: inherit; font-size: 16px; color: var(--graphite);
+  background: #FFFFFF; border: 1.5px solid var(--steel); border-radius: 10px;
+  padding: 12px 14px; min-height: 48px;
+}
+.field textarea { min-height: 96px; resize: vertical; }
+fieldset.field { border: 0; margin: 0; padding: 0; }
+.checks { display: grid; gap: 10px; margin-top: 2px; }
+.checks label { display: flex; gap: 11px; align-items: center; font-weight: 500; min-height: 44px; cursor: pointer; }
+.checks input { width: 21px; height: 21px; accent-color: var(--hivis); flex: none; }
+.form-foot { margin-top: 24px; max-width: 640px; }
+.form-note { color: var(--steel-dark); font-size: 15px; margin-top: 14px; }
+
+/* Footer */
+.site-foot { background: var(--graphite); color: var(--paper); padding: 46px 0 54px; }
+.foot-tag { font-family: var(--display); text-transform: uppercase; font-size: 21px; margin: 18px 0 4px; }
+.foot-sub { color: var(--steel); margin: 0 0 18px; }
+.foot-meta { color: var(--steel); font-size: 14.5px; margin: 0; }
+.foot-meta a { color: var(--paper); }
+
+/* Light-section variants (Phase 2 sections) */
+.sub-h { font-size: 21px; font-weight: 800; margin: 42px 0 4px; }
+.fact-list.light { border-top-color: var(--line); }
+.fact-list.light li { border-bottom-color: var(--line); }
+.fact-list.light .n { color: var(--graphite); }
+.table-scroll.light { border-color: var(--line); }
+.table-scroll.light thead th { color: var(--steel-dark); border-bottom-color: var(--line); }
+.table-scroll.light tbody tr + tr td { border-top-color: var(--line); }
+.table-scroll.light td .addr { color: var(--steel-dark); }
+.sample-cap.light { color: var(--steel-dark); }
+.roof-lines { list-style: none; margin: 22px 0 0; padding: 0; max-width: 760px; }
+.roof-lines li {
+  padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px;
+  margin-bottom: 10px; font-size: 16.5px; background: #FFFFFF;
+}
+.roof-lines .rl { font-weight: 700; }
+
+@media (max-width: 640px) {
+  .head-phone { display: none; }
+  .fields { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  section { padding: 50px 0; }
+  .hero { padding: 48px 0 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="lockup" href="#top" aria-label="FerrumLine for producers, home">
+      <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><rect x="14" y="10" width="36" height="9" fill="#FF5F15"/><rect x="14" y="10" width="9" height="44" fill="#FF5F15"/><rect x="14" y="28" width="25" height="9" fill="#FF5F15"/><rect x="14" y="45" width="36" height="9" fill="#8A8F98"/></svg>
+      <span>
+        <span class="word">FERRUMLINE</span><br />
+        <span class="for">For producers</span>
+      </span>
+    </a>
+    <div class="head-right">
+      <a class="head-phone" href="tel:+15036797248">503-679-7248</a>
+      <a class="btn small" href="#request">Request a report</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <div class="hero" id="top">
+    <div class="wrap">
+      <h1>Businesses that just filed, and now must buy insurance</h1>
+      <div class="sub">
+        <p>FerrumLine reads public filings every week and builds a report for commercial insurance producers.</p>
+        <p>The report lists new businesses that have to buy insurance, or change the policy they have, because of what they just filed.</p>
+        <p class="facts">One report, built for your territory. $79 a month. The first two weekly deliveries are free, with no card.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="#request">Request a report</a>
+        <a class="plain-link" href="#trucking">See the trucking window</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trucking -->
+  <section class="dark" id="trucking">
+    <div class="wrap">
+      <h2>The trucking window</h2>
+      <div class="lede">
+        <p>A new trucking company applies to the federal government for operating authority.</p>
+        <p>The authority stays pending until an insurance company files proof of coverage.</p>
+        <p>Until that filing lands, the company cannot legally start. The application is dated, and the wait is the opening.</p>
+        <p>We watch the federal trucking files and pull the businesses that applied, are still waiting, and have no filing on file yet.</p>
+      </div>
+      <ul class="fact-list">
+        <li><span class="n">9,239</span> businesses applied for federal trucking authority from September 22 to October 22, 2026.</li>
+        <li><span class="n">6,479</span> were still waiting on October 22, with no insurance filing on file. That is about <span class="n">1,450</span> new waiting businesses a week.</li>
+        <li><span class="n">6,403</span> more were granted authority in the same month. A granted carrier has a filing on file, so the granted list is the second call: new authority, first real policy, first renewal ahead.</li>
+        <li>Most rows are trucking companies that haul goods. Freight brokers, household goods movers, and passenger carriers sit in the same files, in smaller numbers.</li>
+      </ul>
+      <div class="note-block">
+        <p class="lead-in">Why call a carrier that already filed?</p>
+        <p>A filing is a coverage amount, not a finished policy. Most granted carriers filed at $750,000 or $1,000,000, the amounts the federal rules ask for.</p>
+        <p>A new authority still has to place its real policy, set its limits, and face its first renewal. The waiting list is the first call, and the granted list is the second one; both lists carry the dates that matter.</p>
+      </div>
+      <h3 class="sub-h">The fifteen states, counted</h3>
+      <p class="lede" style="color:var(--paper);">The trucking report is built state by state. These fifteen states have full lists, counted on October 22, 2026. A carrier is staged from the day it applies until its authority is granted or the application ends.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>State</th><th>Staged now</th><th>Waiting, no filing</th><th>Granted, last 30 days</th><th>First call, 6–20 trucks</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Texas</td><td>4,271</td><td>2,463</td><td>773</td><td>72</td></tr>
+            <tr><td>California</td><td>3,916</td><td>2,251</td><td>662</td><td>53</td></tr>
+            <tr><td>Florida</td><td>3,077</td><td>1,837</td><td>507</td><td>35</td></tr>
+            <tr><td>Illinois</td><td>1,834</td><td>875</td><td>390</td><td>20</td></tr>
+            <tr><td>Pennsylvania</td><td>1,756</td><td>976</td><td>313</td><td>22</td></tr>
+            <tr><td>Ohio</td><td>1,594</td><td>844</td><td>305</td><td>21</td></tr>
+            <tr><td>Georgia</td><td>1,580</td><td>924</td><td>253</td><td>21</td></tr>
+            <tr><td>New Jersey</td><td>1,381</td><td>899</td><td>199</td><td>21</td></tr>
+            <tr><td>North Carolina</td><td>1,241</td><td>651</td><td>216</td><td>23</td></tr>
+            <tr><td>Indiana</td><td>835</td><td>450</td><td>155</td><td>11</td></tr>
+            <tr><td>New York</td><td>795</td><td>593</td><td>99</td><td>23</td></tr>
+            <tr><td>Virginia</td><td>757</td><td>425</td><td>143</td><td>10</td></tr>
+            <tr><td>Arizona</td><td>741</td><td>403</td><td>139</td><td>12</td></tr>
+            <tr><td>Michigan</td><td>709</td><td>413</td><td>127</td><td>17</td></tr>
+            <tr><td>Maryland</td><td>661</td><td>407</td><td>96</td><td>10</td></tr>
+            <tr><td><strong>All fifteen</strong></td><td><strong>25,148</strong></td><td><strong>14,411</strong></td><td><strong>4,377</strong></td><td><strong>371</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-block">
+        <p class="lead-in">Two calls, and a size cut.</p>
+        <p>The first call is a carrier still waiting: it applied, no insurance filing has landed, and it cannot legally run until one does. The second call is a carrier granted in the last 30 days: it has a filing on file and a first real policy to place.</p>
+        <p>Rows are also cut by fleet size, taken from the federal carrier census: 1–5 trucks, 6–20, and 21 and up. A twenty-truck fleet and a one-truck operation are different accounts. The 6–20 band is where a new carrier is big enough to need a real program and small enough that the producer who calls first can still win it. On October 22, 371 first-call rows sat in that band across the fifteen states.</p>
+      </div>
+      <h3 style="font-size:21px; font-weight:800; margin:42px 0 4px;">What one row shows</h3>
+      <dl class="fields">
+        <div><dt>Legal name and DBA</dt><dd>As the federal record prints them</dd></div>
+        <div><dt>Street address, city, state, ZIP</dt><dd>The business address in the record</dd></div>
+        <div><dt>Business phone</dt><dd>The number the business gave the federal government</dd></div>
+        <div><dt>Kind of authority</dt><dd>Trucking, broker, forwarder, or passengers; goods or household goods</dd></div>
+        <div><dt>Standing and date</dt><dd>Waiting or granted, and the date it applied or was granted</dd></div>
+        <div><dt>Filing standing</dt><dd>No filing on file, or the amount filed</dd></div>
+        <div><dt>Fleet size</dt><dd>Trucks on the carrier's federal census record, where the census carries it</dd></div>
+        <div><dt>USDOT and docket numbers</dt><dd>So the row can be checked against your own records</dd></div>
+      </dl>
+      <p class="sample-cap">Four rows from the Texas list, October 22, 2026: waiting, no filing on file, in the 6–20 truck band. Shown as the federal record prints them.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Business</th><th>Phone</th><th>Applied</th><th>Trucks</th><th>Filing</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clean Energy Extractors Llc<span class="addr">65 Pizarro Ave, Rancho Viejo, TX 78575</span></td>
+              <td>+1 (956) 592-3468</td><td>Jul 16, 2026</td><td>20</td><td>No filing on file</td>
+            </tr>
+            <tr>
+              <td>Eternity Logistics Group Corp<span class="addr">8613 Aracari Cv, Austin, TX 78744</span></td>
+              <td>+1 (805) 501-4463</td><td>Aug 28, 2026</td><td>20</td><td>No filing on file</td>
+            </tr>
+            <tr>
+              <td>Iron Yellow Rentals, Llc (DBA Cisco Equipment)<span class="addr">520 SE Loop 338, Odessa, TX 79762</span></td>
+              <td>+1 (432) 367-9181</td><td>Sep 4, 2026</td><td>20</td><td>No filing on file</td>
+            </tr>
+            <tr>
+              <td>Mariscal Trucking<span class="addr">3180 FM 297, Dalhart, TX 79022</span></td>
+              <td>+1 (806) 333-5131</td><td>Jul 1, 2026</td><td>18</td><td>No filing on file</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="snapshot">Counted from the federal files on October 22, 2026. Applications are not buyers: 512 of the month's applications were withdrawn within the month, and 1,614 were granted within days. The window is short. Every report prints the date its records are current through, so you can see how fresh a row is before you call it.</p>
+      <p class="snapshot">The fifteen state files hold 18,788 of the 25,148 staged rows; the rest are staged and counted while their state files are finished. Fleet size comes from the federal carrier census and is matched on 98.88 percent of the rows inside the files.</p>
+    </div>
+  </section>
+
+  <!-- Commercial openings -->
+  <section id="openings">
+    <div class="wrap">
+      <h2>Commercial openings</h2>
+      <div class="lede">
+        <p>A business that pulls a permit is building a location, expanding, or changing what it does on site. Coverage changes at the permit, and again at the opening. There is no national permit file, so this report is built city by city and county by county, and it prints what it covers.</p>
+        <p>Two tiers. Tier 1 is the buying window: a permit is issued or work has started, which is when landlords, lenders, and contractors ask for certificates. Tier 2 is early awareness: projects in planning, months out, so you hear about them before a sign goes up.</p>
+      </div>
+      <div class="windows">
+        <div class="window">
+          <h3>Tier 1 — Human Bean, 2423 NE 134th St, Vancouver, WA</h3>
+          <p>An operating drive-thru coffee location with a mechanical permit issued October 7, 2026, work valued at $20,000. A remodel at a business that is already open — the entry prints as a remodel, because that is what the record shows. Work at an operating business is when property values and policies get revisited.</p>
+        </div>
+        <div class="window">
+          <h3>Tier 1 — 8100 NE Saint Johns Rd, Suite D101, Vancouver, WA</h3>
+          <p>A commercial space fitting out: mechanical permit issued October 5, 2026, county value $1,180,210. A fit-out at this value means a lease signed and a deadline set. The operating business is not named in the record, and the report says so instead of guessing.</p>
+        </div>
+        <div class="window">
+          <h3>Tier 2 — 115 NW 22nd Ave, Portland, OR</h3>
+          <p>An existing 10,405 sq ft commercial building becoming a food cart pod and restaurant, with site work. In planning since August 11, 2026. No building permit filed yet.</p>
+        </div>
+        <div class="window">
+          <h3>Tier 2 — NE 72nd Ave, Portland, OR</h3>
+          <p>Two new four-plex apartment buildings, 8 units, on an existing flag lot. In planning since July 29, 2026. The owner of a new 8-unit property has a landlord policy to write and builder coverage during construction.</p>
+        </div>
+      </div>
+      <p class="coverage-line">From the sample week of October 20, 2026. Portland records run through October 11, 2026. The Clark County record covers unincorporated Clark County and Yacolt for October 4–11, 2026; the cities inside Clark County run their own permits and are added territory by territory.</p>
+    </div>
+  </section>
+
+  <!-- Liquor openings -->
+  <section id="liquor" style="padding-top:0;">
+    <div class="wrap">
+      <h2>Liquor openings, checked twice</h2>
+      <div class="lede">
+        <p>A business that will sell alcohol leaves two public records: a state liquor license application, and usually a building permit for the space it will sell from. Either record alone is a week of noise. At the same address, for the same business, they mark a business spending money to open.</p>
+        <p>We match the two files address by address, and a person reads every pair before it prints. Pairs where the two records do not agree are left out.</p>
+      </div>
+      <ul class="fact-list light">
+        <li><span class="n">135</span> candidate pairs were checked for Portland.</li>
+        <li><span class="n">21</span> passed — the pairs in the table. The other 114 did not pass the check and are not shown.</li>
+      </ul>
+      <p class="sample-cap light">The 21 pairs, Portland, Oregon. A liquor application date is when the state received the application; a build-out takes months, so the dates run back to October 2025.</p>
+      <div class="table-scroll light">
+        <table>
+          <thead>
+            <tr><th>Business</th><th>Address</th><th>Liquor application</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>K'Nyaw Mini Mart</td><td>16331 SE Powell Blvd</td><td>Oct 7, 2025</td></tr>
+            <tr><td>Proof Pizza</td><td>932 SE Morrison St</td><td>Oct 8, 2025</td></tr>
+            <tr><td>Local Cafe</td><td>4919 SE 82nd Ave</td><td>Nov 5, 2025</td></tr>
+            <tr><td>1166 - Portland Moreland</td><td>7207 SE Milwaukie Ave</td><td>Nov 6, 2025</td></tr>
+            <tr><td>Modhaus</td><td>3829 SE Division St</td><td>Nov 6, 2025</td></tr>
+            <tr><td>The Circuit Gym SW</td><td>6050 S Macadam Ave</td><td>Nov 13, 2025</td></tr>
+            <tr><td>Happy Spice Chinese Restaurant 1</td><td>2446 SE 87th Ave</td><td>Dec 19, 2025</td></tr>
+            <tr><td>Magian Distilling</td><td>1515 SE 46th Ave</td><td>Feb 3, 2026</td></tr>
+            <tr><td>Say When</td><td>305 NW 21st Ave</td><td>Feb 4, 2026</td></tr>
+            <tr><td>Elmer's Breakfast Lunch Dinner - Airport Way</td><td>11335 NE Airport Way</td><td>Feb 6, 2026</td></tr>
+            <tr><td>La Bonita</td><td>8233 N Denver Ave</td><td>Mar 20, 2026</td></tr>
+            <tr><td>Prince Coffee</td><td>1936 N Killingsworth St</td><td>Mar 23, 2026</td></tr>
+            <tr><td>Angelina's</td><td>1580 NW 21st Ave</td><td>Mar 25, 2026</td></tr>
+            <tr><td>Tamale Boy HQ</td><td>2323 N Williams Ave</td><td>Apr 9, 2026</td></tr>
+            <tr><td>Interstate Fuel Stop / Interstate 76</td><td>5429 N Interstate Ave</td><td>Apr 28, 2026</td></tr>
+            <tr><td>The Heathman Hotel</td><td>1001 SW Broadway</td><td>May 1, 2026</td></tr>
+            <tr><td>Uncle Ryan's BBQ</td><td>10308 SE Washington St</td><td>May 15, 2026</td></tr>
+            <tr><td>The Malarkey</td><td>555 NW 12th Ave</td><td>Jul 2, 2026</td></tr>
+            <tr><td>Better Half</td><td>2375 NW Thurman St</td><td>Jul 22, 2026</td></tr>
+            <tr><td>Amazon Now</td><td>4444 SE 27th Ave</td><td>Aug 11, 2026</td></tr>
+            <tr><td>Fiery Crab</td><td>1832 NE 122nd Ave</td><td>Sep 4, 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sample-cap light">A license application is not an opening. Some of these businesses are open, some are still building, and some will not open. The report prints the record; the call is yours.</p>
+    </div>
+  </section>
+
+  <!-- Storm canvass -->
+  <section class="dark" id="storm">
+    <div class="wrap">
+      <h2>Storm canvass lists</h2>
+      <div class="lede">
+        <p>After a hail or wind storm, the roofs that got fixed leave a permit. The ones that did not are a list a roofer can walk.</p>
+        <p>We build the list from the federal storm record and the city's permit file: every address near a recorded storm point, minus every address that pulled a roof permit after the storm. What is left is not a damage claim. It is where to look first.</p>
+      </div>
+      <h3 class="sub-h">San Antonio, Texas — where the test covers houses</h3>
+      <p class="lede" style="color:var(--paper);">San Antonio requires a permit to repair or replace a roof — the city's own homeowner page says so, with no exceptions for ordinary re-roofs. A permitted re-roof leaves a record, so an address still on this list is an address where damaging weather was recorded nearby and no re-roof permit followed.</p>
+      <ul class="fact-list">
+        <li><span class="n">54</span> qualifying storms crossed Bexar County from January 2024 through September 2026: 52 hail events at 1 inch or larger — the largest was 3 inches — and 2 damaging wind events.</li>
+        <li><span class="n">15,787</span> re-roof permits in the city's files for the same window, each one typed as a re-roof permit by the city.</li>
+        <li>Of <span class="n">16,644</span> addresses within 1.5 km of a storm point, <span class="n">3,703</span> pulled a re-roof permit after their storm and were crossed off.</li>
+        <li>The list: <span class="n">12,941</span> addresses on <span class="n">2,588</span> streets. The fresh part — <span class="n">4,377</span> addresses near the 2025 and 2026 storms — is worked first.</li>
+      </ul>
+      <p class="sample-cap">Four rows from the San Antonio list, nearest the newest storm point. The full list carries every address, with the storm, its date, and its size or damage figure.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Address</th><th>Nearest storm</th><th>Storm date</th><th>Distance</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5114 Borchers Dr, Kirby, TX 78219</td><td>Thunderstorm wind — Kirby</td><td>May 26, 2026</td><td>0.21 km</td></tr>
+            <tr><td>2509 Telegraph, Kirby, TX 78219</td><td>Thunderstorm wind — Kirby</td><td>May 26, 2026</td><td>0.27 km</td></tr>
+            <tr><td>5050 Tom Stafford Dr, Kirby, TX 78219</td><td>Thunderstorm wind — Kirby</td><td>May 26, 2026</td><td>0.30 km</td></tr>
+            <tr><td>2218 Corner Ridge, San Antonio, TX 78219</td><td>Thunderstorm wind — Kirby</td><td>May 26, 2026</td><td>0.62 km</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="sub-h">Austin, Texas — commercial weight, stated plainly</h3>
+      <ul class="fact-list">
+        <li><span class="n">45</span> qualifying storms in Travis County, January 2024 through September 2026: 42 hail, 2 damaging wind, and 1 tornado that did $5.00M in damage at Manor.</li>
+        <li>The Austin list: <span class="n">11,843</span> addresses on <span class="n">1,939</span> streets.</li>
+        <li>Austin lets most homeowners replace a roof covering without a permit. For houses, this list is a starting map, not a record test. The absence test carries its weight on commercial buildings, structural work, and the wildland-urban interface, where Austin does require permits.</li>
+      </ul>
+      <p class="snapshot">A storm point is where the weather service recorded the storm — a spotter report or a survey point — not a line around every damaged roof. No permit never proves no work was done: work done without a permit leaves no record. The list decides where to look; the roof is judged from the street.</p>
+    </div>
+  </section>
+
+  <!-- Roof line -->
+  <section id="roof">
+    <div class="wrap">
+      <h2>The roof line</h2>
+      <div class="lede">
+        <p>Insurers price roofs by age, and older roofs lose coverage options first. Nobody can see a roof's age from the street — but a permitted re-roof leaves a dated record.</p>
+        <p>Where a record we hold covers an address in your report, the report prints one line with the date. It reads like this:</p>
+      </div>
+      <ul class="roof-lines">
+        <li><span class="rl">5717 NE Killingsworth St, Portland</span> — Roof: re-roof permit dated November 21, 2024.</li>
+        <li><span class="rl">2165 SW Main St, Portland</span> — Roof: re-roof permit dated December 12, 2024.</li>
+        <li><span class="rl">1654 N Simpson St, Portland</span> — Roof: re-roof permit dated October 9, 2026.</li>
+      </ul>
+      <h3 class="sub-h">Coverage, stated plainly</h3>
+      <div class="windows">
+        <div class="window">
+          <h3>Portland, Oregon</h3>
+          <p>146 documented re-roof records at 136 addresses. Every record was read by a person against the permit text before it was kept — rooftop equipment work, additions, and partial repairs were read and left out. Documented re-roofs run from November 21, 2024 forward. That is where the permit files we hold begin, and the report does not pretend otherwise.</p>
+        </div>
+        <div class="window">
+          <h3>Where there is no record</h3>
+          <p>The report prints nothing about the roof. No blank line, and no "no record found" — a thin file would say the wrong thing about a good roof.</p>
+        </div>
+        <div class="window">
+          <h3>Clark County, Washington</h3>
+          <p>The county's answer to our records request is due by November 19, 2026 and covers about twelve months of permits. The roof line starts there when the records land.</p>
+        </div>
+        <div class="window">
+          <h3>Gwinnett County, Georgia</h3>
+          <p>The county's weekly issued-permit file is now being read. In the first week counted — 149 permits issued October 12–16, 2026 — none mentioned a roof. Coverage there is a first week, not a history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More windows -->
+  <section id="windows" style="padding-top:0;">
+    <div class="wrap">
+      <h2>More windows, built territory by territory</h2>
+      <p class="lede">Trucking is federal, so one file covers the whole country. The windows below are kept by states, counties, and cities. We build them one territory at a time, and we say plainly what each territory covers.</p>
+      <div class="windows">
+        <div class="window">
+          <h3>Health permits and new restaurants</h3>
+          <p>A new restaurant cannot open without a health permit and an opening inspection.</p>
+          <p>Health departments keep those records. A first inspection usually means an opening is close, and an opening means a new policy or a changed one.</p>
+        </div>
+        <div class="window">
+          <h3>New business filings</h3>
+          <p>Every new LLC and corporation files with its Secretary of State. The filing is the earliest public record a business makes.</p>
+          <p>Some states sell the full list as a data file. Where they do, new filings can be cut by week and by county, and a new business at a commercial address is a business about to sign a lease, a loan, or a contract that asks for insurance.</p>
+        </div>
+      </div>
+      <p class="coverage-line">Coverage is set for your territory before you enroll. The report prints what it covers, and what it does not. Row counts differ by territory: big states run into the hundreds each month, and small territories run a handful.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" style="padding-top:0;">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><p><span class="step-head">Tell us your territory and your lines.</span> Use the form below. States, or parts of states, and the kinds of business you write.</p></li>
+        <li><p><span class="step-head">We set the coverage and print it.</span> The report states what it covers before the first delivery, so there is no guessing about what is inside.</p></li>
+        <li><p><span class="step-head">The report lands every week.</span> Every report prints the date its records are current through.</p></li>
+        <li><p><span class="step-head">A quiet week prints one line.</span> It says nothing changed. Old rows are never recycled to fill a report.</p></li>
+        <li><p><span class="step-head">The first two weekly deliveries are free.</span> No card. Nothing starts billing on its own.</p></li>
+        <li><p><span class="step-head">To stop, reply to any report email and say cancel.</span> The service runs through what you paid for, and then it ends.</p></li>
+      </ol>
+      <p class="method-note">We read the public record so you don't have to. Records from city, county, state, and federal offices, cross-matched and tracked across about 140 facts per project, so the short list you get each week is the right list.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="dark" id="price">
+    <div class="wrap">
+      <h2>Price</h2>
+      <p class="price-big">$79</p>
+      <p class="price-per">a month, per selected report</p>
+      <ul class="price-lines">
+        <li>You are buying the report, not names by the piece. The trucking report is one report.</li>
+        <li>No setup fee. No charge per row.</li>
+        <li>The first two weekly deliveries are free. No card. Nothing starts billing on its own.</li>
+        <li>Month to month. There is no lock-in period and no long-term contract.</li>
+        <li>Cancel by replying to any report email. The service runs through the month you paid for.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Request form -->
+  <section id="request">
+    <div class="wrap">
+      <h2>Request a report</h2>
+      <p class="lede">Tell us where you write and what you write. We answer by email with the coverage for your territory and the date of your first free delivery.</p>
+      <form id="req-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="f-agency">Agency</label>
+          <input type="text" id="f-agency" name="agency" autocomplete="organization" />
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="f-territory">States or territory you write</label>
+          <input type="text" id="f-territory" name="territory" placeholder="Example: Georgia, or metro Atlanta" />
+        </div>
+        <fieldset class="field wide">
+          <legend>Lines you write</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="lines" value="Trucking and transportation" /> Trucking and transportation</label>
+            <label><input type="checkbox" name="lines" value="Restaurants and hospitality" /> Restaurants and hospitality</label>
+            <label><input type="checkbox" name="lines" value="Retail, liquor, and stores" /> Retail, liquor, and stores</label>
+            <label><input type="checkbox" name="lines" value="Builders and commercial property" /> Builders and commercial property</label>
+            <label><input type="checkbox" name="lines" value="Storm canvass lists" /> Storm canvass lists</label>
+            <label><input type="checkbox" name="lines" value="Roof records" /> Roof records</label>
+            <label><input type="checkbox" name="lines" value="Other commercial lines" /> Other commercial lines</label>
+          </div>
+        </fieldset>
+        <div class="field wide">
+          <label for="f-need">What do you need to know about a business before you call?</label>
+          <textarea id="f-need" name="need"></textarea>
+        </div>
+        <div class="field wide form-foot">
+          <button class="btn" type="submit">Send the request</button>
+          <p class="form-note">Sending opens your email program with the answers filled in, addressed to us. Nothing is billed from this form, ever. Rather talk first? Call or text 503-679-7248.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="lockup">
+      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect x="14" y="10" width="36" height="9" fill="#FF5F15"/><rect x="14" y="10" width="9" height="44" fill="#FF5F15"/><rect x="14" y="28" width="25" height="9" fill="#FF5F15"/><rect x="14" y="45" width="36" height="9" fill="#8A8F98"/></svg>
+      <span class="word">FERRUMLINE</span>
+    </span>
+    <p class="foot-tag">Iron data. Straight talk.</p>
+    <p class="foot-sub">We procure the data. You procure the projects.</p>
+    <p class="foot-meta">Researched and compiled by John Linneman. Questions: <a href="tel:+15036797248">503-679-7248</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var EMAIL = 'urielpro78@gmail.com';
+  var form = document.getElementById('req-form');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    function val(id) { return document.getElementById(id).value.trim(); }
+    var lines = [];
+    form.querySelectorAll('input[name="lines"]:checked').forEach(function (cb) { lines.push(cb.value); });
+    var body = [
+      'Producer report request',
+      '',
+      'Name: ' + val('f-name'),
+      'Agency: ' + val('f-agency'),
+      'Email: ' + val('f-email'),
+      'Territory: ' + val('f-territory'),
+      'Lines: ' + (lines.length ? lines.join(', ') : '(none checked)'),
+      'What I need to know before I call: ' + val('f-need')
+    ].join('\n');
+    window.location.href = 'mailto:' + EMAIL + '?subject=' +
+      encodeURIComponent('Producer report request') + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
